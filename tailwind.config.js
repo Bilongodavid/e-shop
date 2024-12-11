@@ -8,6 +8,7 @@ export default {
       second: "#737373",
       danger: "#E74040",
       black: "#000000",
+      "light-gray": "#FAFAFA",
     },
     fontSize: {
       sm: [

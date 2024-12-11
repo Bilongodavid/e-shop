@@ -14,7 +14,7 @@ interface Props {
     | "list"
     | "link";
   className?: string;
-  color?: "primary" | "second" | "black" | "danger";
+  color?: "primary" | "second" | "black" | "danger" | "white";
 }
 export default function Typograthy({
   children,
@@ -29,6 +29,9 @@ export default function Typograthy({
   switch (color) {
     case "black":
       colorStyles = "text-black";
+      break;
+    case "white":
+      colorStyles = "text-white";
       break;
 
     case "second":

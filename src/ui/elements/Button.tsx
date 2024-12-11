@@ -1,27 +1,53 @@
 interface Props {
   children: React.ReactNode;
   outline: boolean;
-  color?: "primery" | "white";
+  color?: "primery" | "white" | "white-outline";
   icon?: boolean;
-  rounded?: "full" | "md";
   size?: "sm" | "md" | "lg" | "store";
+  rounded?: "md" | "lg" | "full" | "none" | "md-r" | "md-l";
   type?: "submit" | "button";
   className?: string;
 }
 export default function Button({
   children,
-  outline = false,
   color = "white",
   icon = false,
-  rounded,
   size = "sm",
   type = "button",
+  rounded = "md",
   className,
 }: Props) {
   let sizeStyles: string = "";
+  let colorStyles: string = "";
+  let roundedStyles: string = "";
+  switch (color) {
+    case "white-outline":
+      colorStyles = "border border-white text-white px-7";
+      break;
+    case "white":
+      colorStyles = "text-white";
+      break;
+    case "primery":
+      colorStyles = "bg-primary text-white";
+      break;
+  }
   switch (size) {
     case "sm":
-      sizeStyles = "text-sm font-bold py-2 px-3 text-sm font-bold";
+      sizeStyles = "text-sm py-2 px-3";
+      break;
+  }
+  switch (rounded) {
+    case "md":
+      roundedStyles = "rounded-md";
+      break;
+    case "md-l":
+      roundedStyles = "rounded-l-md ";
+      break;
+    case "md-r":
+      roundedStyles = "rounded-r-md ";
+      break;
+    case "none":
+      roundedStyles = "";
       break;
   }
   switch (icon) {
@@ -29,7 +55,7 @@ export default function Button({
       return (
         <button
           type={type}
-          className={` ${className} ${sizeStyles} bg-primary text-white  rounded-sm shadow}`}
+          className={` ${className} ${sizeStyles} ${colorStyles} ${roundedStyles}   shadow}`}
         >
           <div className="flex justify-center items-center">{children}</div>
         </button>
@@ -39,7 +65,7 @@ export default function Button({
       return (
         <button
           type={type}
-          className={` ${className} bg-primary text-white ${sizeStyles} rounded-md shadow}`}
+          className={` ${className}   ${sizeStyles} ${colorStyles}  ${roundedStyles}  shadow}`}
         >
           {children}
         </button>
