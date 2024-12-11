@@ -9,6 +9,7 @@ import Team from "./ui/components/Team";
 import Client from "./ui/components/Client";
 import Testimonials from "./ui/components/Testimonials";
 import Footer from "./ui/layouts/Footer";
+
 function App() {
   return (
     <>
