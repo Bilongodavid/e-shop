@@ -1,7 +1,9 @@
-import { Container } from "../components/Container";
-import Button from "../elements/Button";
-import Typograthy from "../elements/Typograthy";
+import { Link } from "react-router-dom";
+
 import { HiArrowRight } from "react-icons/hi";
+import { Container } from "../ui/components/Container";
+import Button from "../ui/elements/Button";
+import Typograthy from "../ui/elements/Typograthy";
 export function Header() {
   return (
     <div className="py-4 fixed  right-0 left-0 bg-white/85 ">
@@ -11,13 +13,22 @@ export function Header() {
           <nav>
             <ul className="flex items-center justify-center space-x-4">
               <li>
-                <Typograthy size="link">Home</Typograthy>
+                <Typograthy size="link">
+                  <Link to="/">Home</Link>
+                </Typograthy>
               </li>
               <li>
                 <Typograthy size="link">Product</Typograthy>
               </li>
               <li>
-                <Typograthy size="link">ontact</Typograthy>
+                <Typograthy size="link" component="div">
+                  <Link to="/pricing">Pricing</Link>
+                </Typograthy>
+              </li>
+              <li>
+                <Typograthy size="link" component="div">
+                  Contact
+                </Typograthy>
               </li>
             </ul>
           </nav>

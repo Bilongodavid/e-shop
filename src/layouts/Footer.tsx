@@ -1,9 +1,9 @@
 import { BsFacebook } from "react-icons/bs";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiTwitterFill } from "react-icons/ri";
-import { Container } from "../components/Container";
-import Typograthy from "../elements/Typograthy";
-import Button from "../elements/Button";
+import { Container } from "../ui/components/Container";
+import Typograthy from "../ui/elements/Typograthy";
+import Button from "../ui/elements/Button";
 
 export default function Footer() {
   return (

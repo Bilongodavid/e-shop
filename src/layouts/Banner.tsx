@@ -1,7 +1,7 @@
-import background from "../../assets/images/background.png";
-import { Container } from "../components/Container";
-import Button from "../elements/Button";
-import Typograthy from "../elements/Typograthy";
+import background from "../assets/images/background.png";
+import { Container } from "../ui/components/Container";
+import Button from "../ui/elements/Button";
+import Typograthy from "../ui/elements/Typograthy";
 export default function Banner() {
   return (
     <Container>
